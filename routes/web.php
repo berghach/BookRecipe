@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/recipes', [recipeController::class,'index'])->name('recipe.index');
-Route::post('/recipes', [recipeController::class,'store'])->name('recipe.store');
+Route::post('/recipes/store', [recipeController::class,'store'])->name('recipe.store');
 Route::get('/recipes/{recipe}/edit', [recipeController::class,'edit'])->name('recipe.edit');
 Route::put('/recipes/{recipe}/update', [recipeController::class,'update'])->name('recipe.update');
+Route::delete('/recipes/{recipe}/delete', [recipeController::class,'delete'])->name('recipe.delete');
+Route::get('/recipes/search', [recipeController::class,'search'])->name('recipe.search');
