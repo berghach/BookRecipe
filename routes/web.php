@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/recipes', [recipeController::class,'index'])->name('recipe.index');
+Route::get('/recipes/add', [recipeController::class, 'add'])->name('recipe.add');
 Route::post('/recipes/store', [recipeController::class,'store'])->name('recipe.store');
 Route::get('/recipes/{recipe}/edit', [recipeController::class,'edit'])->name('recipe.edit');
 Route::put('/recipes/{recipe}/update', [recipeController::class,'update'])->name('recipe.update');
