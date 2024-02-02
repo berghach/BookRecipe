@@ -2,26 +2,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
     <link rel="stylesheet" href="{{asset('SCSS/style.css')}}">
     <title>Recipes</title>
 </head>
 <body>
-    <section>
-        @include('partial.header')
-    </section>
-    <section class="col-12" style="margin-top: 114px">
-        {{-- <form action="{{route('recipe.search')}}" method="get">
-            {{-- <label for="search">Search</label> --}}
-            {{-- <input type="text" name="search" id="search">
-            <button type="submit">Search</button>
-        </form> --}}
+    @include('partial.header')
+    <section class="col-12" style="">
         <h1>Recipes</h1>
         @if (session()->has('success'))
             <div>
                 {{session('success')}}
             </div>
         @endif
-        <table style="border: 4px solid black ">
+        <div class="container col-12">
+            <div class="recipe-card col-3">
+                <a href="">
+                    <div class="">
+                        <img class="" style="" src="{{asset('images\site_home_pic.png')}}" alt="" srcset="">
+                        <h3>recipe name</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="recipe-card col-3">
+                <a href="">
+                    <div class="">
+                        <img class="" style="" src="{{asset('images\site_home_pic.png')}}" alt="" srcset="">
+                        <h3>recipe name</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="recipe-card col-3">
+                <a href="">
+                    <div class="">
+                        <img class="" style="" src="{{asset('images\site_home_pic.png')}}" alt="" srcset="">
+                        <h3>recipe name</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="recipe-card col-3">
+                <a href="">
+                    <div class="">
+                        <img class="" style="" src="{{asset('images\site_home_pic.png')}}" alt="" srcset="">
+                        <h3>recipe name</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="recipe-card col-3">
+                <a href="">
+                    <div class="">
+                        <img class="" style="" src="{{asset('images\site_home_pic.png')}}" alt="" srcset="">
+                        <h3>recipe name</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <table class="col-3" style="border: 4px solid black ">
             <thead style="background-color: aqua ">
                 <tr>
                     <th>ID</th>
@@ -54,18 +90,6 @@
                 @endforeach
             </tbody>
         </table>
-        <h1>Add recipes</h1>
-        <form name="add" action="{{route('recipe.store')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            @method('post')
-            <label for="name">recipe name</label>
-            <input type="text" name="name" id="name">
-            <label for="content">content</label>
-            <input type="text" name="content" id="content">
-            <label for="image">Image</label>
-            <input type="file" name="image" id="image">
-            <button type="submit">add</button>
-        </form>
     </section>
     <script src="js/app.js"></script>
 </body>

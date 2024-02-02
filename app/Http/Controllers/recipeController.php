@@ -15,6 +15,9 @@ class recipeController extends Controller
 
         return view("recipe.index",["recipes"=>$recipes]);
     }
+    public function add(){
+        return view("recipe.add");
+    }
     public function store(Request $request){
         $data = $request->validate([
             'name' => 'required',

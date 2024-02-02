@@ -1,6 +1,11 @@
 $prime_color: #BD4C0E;
 $second_color: #FBDD53;
 $element_color: #772E0E;
+$bg_color1: #343138;
+$bg_color2: #A47851;
+$bg_color3: #DED68F;
+$bg_color4: #6A4839;
+
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -16,25 +21,40 @@ $element_color: #772E0E;
 .col-12 {width: 100%;}
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    // padding: 15px;
   }
-
+*{
+  border: 1px solid red;
+  
+}
 body{
+    // width: 100vw;
+    background-color: $bg_color1;
     margin: 0px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
+h1{
+  display: inline-flex;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+// header style
 .header-area{
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
     width: 100vw;
     justify-content: center;
-    background-image: linear-gradient(180deg, $second_color, transparent);
-}
+  }
 .header-area a{
     transition: all .5s ease 0s;
 }
@@ -46,6 +66,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px !important;
+    background-color: $bg_color3;
+    border-radius: 50px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 .main-nav div{
   display: flex;
@@ -66,7 +91,7 @@ body{
     margin-block: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding: 0px;
+    padding-bottom: 16px;
 }
 .nav li{
     list-style-type: none;
@@ -174,11 +199,26 @@ body{
  border-radius: 100px;
  border-top-left-radius: 0px;
 }
+// header style
+
+// recipe card style
+.recipe-card{
+  background-color: $second_color;
+}
+.recipe-card a{
+  display: flex;
+  width: 100%;
+}
+.recipe-card img{
+  width: 100%;
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {
       width: 100%;
     }
+    // header style
+
     .header-area .nav {
         display: none;
         text-align: center;
@@ -190,6 +230,16 @@ body{
     .header-area .main-nav .menu-trigger {
         display: block;
     }
+    .search-bar{
+      width: 80vw;
+    }
+    // header style
+
+  // recipe card style
+
+  .recipe-card{
+    width: 80vw;
+  }
   }
 
 #action{

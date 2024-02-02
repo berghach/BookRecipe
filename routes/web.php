@@ -14,8 +14,8 @@ use App\Http\Controllers\recipeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/recipes', function () {
+    return view('index');
 });
 
 Route::get('/recipes', [recipeController::class,'index'])->name('recipe.index');

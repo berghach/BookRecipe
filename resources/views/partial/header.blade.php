@@ -1,10 +1,9 @@
 <header class="header-area">
-    <nav class="col-12 main-nav">
+    <nav class="main-nav col-12">
         <div>
             <h1>
                 <a class="logo" href="{{ url('/recipes') }}">
-                    <span>Recipe</span>
-                    <span>Book</span>
+                    Recipe Book
                 </a>
             </h1>
         </div>
@@ -16,7 +15,7 @@
         <a class='menu-trigger'>
             <span></span>
         </a>
-        @if (url('/recipes'))
+        @if (request()->is('recipes') || request()->is('recipes/search'))
         <form class="search-bar col-9" action="{{route('recipe.search')}}" method="get">
             <input type="text" name="search" id="search" placeholder="Search for recipes">
             <button type="submit">Search</button>
