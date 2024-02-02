@@ -14,11 +14,12 @@ use App\Http\Controllers\recipeController;
 |
 */
 
-Route::get('/recipes', function () {
+Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/recipes', [recipeController::class,'index'])->name('recipe.index');
+Route::get('/', [recipeController::class,'index'])->name('recipe.index');
+Route::get('/recipes/{recipe}/show', [recipeController::class,'showRecipe'])->name('recipe.show');
 Route::get('/recipes/add', [recipeController::class, 'add'])->name('recipe.add');
 Route::post('/recipes/store', [recipeController::class,'store'])->name('recipe.store');
 Route::get('/recipes/{recipe}/edit', [recipeController::class,'edit'])->name('recipe.edit');

@@ -11,9 +11,12 @@ class recipeController extends Controller
 {
     public function index(){
 
-        $recipes = DB::select('SELECT * FROM recipes');
+        $recipes = Recipe::all();
 
-        return view("recipe.index",["recipes"=>$recipes]);
+        return view("index",compact('recipes'));
+    }
+    public function showRecipe(Recipe $recipe){
+        return view("recipe.show",compact('recipe'));
     }
     public function add(){
         return view("recipe.add");
@@ -44,13 +47,13 @@ class recipeController extends Controller
         return redirect()->route('recipe.index')->with('success','Recipe added successfully');
     }
     public function edit(Recipe $recipe){
-        return view('recipe.edit',['recipe'=> $recipe]);
+        return view('recipe.edit',compact('recipe'));
     }
     public function update(Recipe $recipe, Request $request){
         $data = $request->validate([
-            'name' => 'required',
-            'content' => 'required',
-            'image'=> 'required|image|mimes:jpeg,png,jpg,gif'
+            'name' => 'nullable',
+            'content' => 'nullable',
+            'image'=> 'nullable|image|mimes:jpeg,png,jpg,gif'
         ]);
         if($request->hasFile('image')){
             $uploadedImage = $request->file('image');
@@ -81,6 +84,6 @@ class recipeController extends Controller
                        ->get();
         // dd($recipes);
 
-        return view("recipe.index",["recipes"=>$recipes]);
+        return view("index",compact('recipes'));
     }
 }
