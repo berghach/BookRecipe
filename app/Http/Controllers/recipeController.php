@@ -19,13 +19,15 @@ class recipeController extends Controller
         return view("recipe.show",compact('recipe'));
     }
     public function add(){
-        return view("recipe.add");
+        $categories = ['breakfast','lunch','dinner'];
+        return view("recipe.add",compact("categories"));
     }
     public function store(Request $request){
         $data = $request->validate([
             'name' => 'required',
             'content' => 'required',
             'image'=> 'required|image|mimes:jpeg,png,jpg,gif',
+            'category'=>'required'
         ]);
         if($request->hasFile('image')){
             $uploadedImage = $request->file('image');
@@ -47,7 +49,8 @@ class recipeController extends Controller
         return redirect()->route('recipe.index')->with('success','Recipe added successfully');
     }
     public function edit(Recipe $recipe){
-        return view('recipe.edit',compact('recipe'));
+        $categories = ['breakfast','lunch','dinner'];
+        return view('recipe.edit',compact('categories','recipe'));
     }
     public function update(Recipe $recipe, Request $request){
         $data = $request->validate([

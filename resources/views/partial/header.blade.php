@@ -9,7 +9,7 @@
         </div>
         <ul class="nav">
             <li><a href="{{ route('recipe.index')}}">HOME</a></li>
-            <li><a href="{{ url('categories') }}">CATEGORIES</a></li>
+            <li><a href="">CATEGORIES</a></li>
             <li><a href="{{ url('/recipes/add') }}">ADD RECIPES</a></li>
         </ul>
         <a class='menu-trigger'>

@@ -11,7 +11,7 @@
     <section style="">
         <h1>Recipes</h1>
         @if (session()->has('success'))
-            <div>
+            <div class="response">
                 {{session('success')}}
             </div>
         @endif

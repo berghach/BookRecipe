@@ -11,6 +11,7 @@ class Recipe extends Model
     protected $fillable = [
         "name",
         "content",
-        "image"
+        "image",
+        "category"
     ] ;
 }

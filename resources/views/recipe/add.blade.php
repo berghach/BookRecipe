@@ -23,6 +23,14 @@
                 <label for="content">Content</label>
                 <input type="text" name="content" id="content" placeholder="Content">
             </div>
+            <div>
+                <label for="category">category</label>
+                <select name="category" id="">
+                    @foreach ($categories as $key=>$item)
+                        <option value="{{$item}}">{{$item}}</option>
+                    @endforeach
+                </select>
+            </div>
                 <label for="image">Image</label>
                 <input type="file" name="image" id="image" placeholder="Upload your image">
             <button type="submit">Add</button>
