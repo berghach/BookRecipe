@@ -18,7 +18,7 @@
         <div class="container">
             @foreach ($recipes as $item)
                 <div class="recipe-card col-3">
-                    <a href="{{route('recipe.show', ['recipe'=>$item->id])}}">
+                    <a href="{{route('recipe.show', ['recipe'=>$item->name])}}">
                         <div class="">
                             <img class="" style="" src="{{asset($item->image)}}" alt="" srcset="">
                             <h3>{{$item->name}}</h3>
